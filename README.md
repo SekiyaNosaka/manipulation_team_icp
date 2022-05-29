@@ -7,25 +7,25 @@ Open3Dを用いた3Dモデルベースマッチングを一連で紹介してい
 ## 導入
 1. Dockerfileをビルドしてイメージ作成（数十分かかるのでコーヒーでも飲みながら）
 
-```terminal
-$ ./build-docker-image.sh
-```
+    ```terminal
+    $ ./build-docker-image.sh
+    ```
 
 2. 作成イメージからコンテナ作成＆Run
 
-```terminal
-$ ./run-docker-container.sh
-```
+    ```terminal
+    $ ./run-docker-container.sh
+    ```
 
-ubuntu 18.04でpipするとopen3dが入ってることが確認できる
+    ubuntu 18.04の環境で、`pip3 list`するとopen3d 0.8.0が入ってることが確認する
 
 3. 終わったらexitする
 
 4. コンテナは止まっていないので、コンテナを止める
 
-```terminal
-$ ./stop-docker-container.sh
-```
+    ```terminal
+    $ ./stop-docker-container.sh
+    ```
 
 
 ## ダウンサンプリング
