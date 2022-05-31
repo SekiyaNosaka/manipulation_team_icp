@@ -1,4 +1,3 @@
-# nvidia製gpu搭載の方は以下の如くdocker hubから任意のimageを参照する？
 #FROM nvidia/cuda:11.4.2-devel-ubuntu20.04
 FROM ubuntu:18.04
 
@@ -11,7 +10,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # aptを日本のミラーに設定
 RUN sed -i.bak -e "s/http:\/\/archive\.ubuntu\.com/http:\/\/jp\.archive\.ubuntu\.com/g" /etc/apt/sources.list
-
 
 # 基本的なaptパッケージのインストール
 RUN apt-get update
@@ -28,16 +26,20 @@ RUN apt-get install -y curl \
     iputils-ping \
     net-tools \
     mesa-utils \
-    vim \
     dbus-x11 \
+    vim \
     eog
 
 # 使用ソフトの諸々インストール
 RUN apt-get install -y python3 \
     python3-pip \
     libjpeg-dev \
-    zlib1g-dev
+    zlib1g-dev \
+    meshlab \
+    pcl-tools
 RUN pip3 install open3d==0.8.0
+RUN pip3 install matplotlib
 
 # aptのキャッシュを削除してイメージの容量削減
 RUN rm -rf /var/lib/apt/lists/
+

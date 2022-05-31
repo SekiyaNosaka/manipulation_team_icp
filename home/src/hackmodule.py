@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # @author: nosaka
 
+# General
 import copy
 import numpy as np
 import open3d as o3d
@@ -80,8 +81,8 @@ def draw_registration_result(model, scene, trans):
     source = o3d.io.read_point_cloud(model)
     target = o3d.io.read_point_cloud(scene)
 
-    source.paint_uniform_color([1, 0.706, 0])
-    target.paint_uniform_color([0, 0.651, 0.929])
+    source.paint_uniform_color([1, 0.705, 0])
+    target.paint_uniform_color([0, 0.650, 0.930])
 
     source.transform(trans)
     o3d.visualization.draw_geometries([source, target])
@@ -89,7 +90,6 @@ def draw_registration_result(model, scene, trans):
 def pose_decision_for_rotate_mat(result):
     '''
     @brief: Derive Roll, Pitch, and Yaw of Euler angles from rotation matrix and print it here!
-
     Hint: ZYX Euler angles aer generally used in Open3d and ROS
 
     '''

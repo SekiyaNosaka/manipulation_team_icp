@@ -23,8 +23,6 @@ else
     hardware_acceleration=""
 fi
 
-
-
 if [ ! `docker ps -f name=$DOCKER_CONTAINER_NAME -q` ]; then
   docker run --name $DOCKER_CONTAINER_NAME -it --net host -d \
     -v ${PWD}/home:/home/${USER} \
@@ -43,3 +41,4 @@ if [ ! `docker ps -f name=$DOCKER_CONTAINER_NAME -q` ]; then
 fi
 
 docker exec -u $(id -u):$(id -g) -w /home/$USER -e DISPLAY -it $DOCKER_CONTAINER_NAME bash
+

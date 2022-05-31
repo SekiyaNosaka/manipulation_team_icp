@@ -150,3 +150,16 @@ eog buddha_matching.png
 cd
 ls
 exit
+ls
+cd src
+ls
+cd data
+ls
+cd happy_buddha/
+ls
+cd ../
+ls
+cd ../
+ls
+python3 icp.py 
+exit
