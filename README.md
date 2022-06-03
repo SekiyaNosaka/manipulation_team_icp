@@ -100,15 +100,21 @@ target_fpfh = o3d.registration.compute_fpfh_feature(target_down, o3d.geometry.KD
 
 対応点同士の距離の2乗和が最も小さくなるように、RとT(回転並進行列)を推定する手法
 
+<div style="text-align: center;">
+
 $argminE = \sum_{i=1}^{n} || P_{ti} - (RP_{si} + T) ||^2$
 
+</div>
 
 **Point-To-Plane**
 
 対応する点へのベクトルとPtの法線の内積が最も小さくなるようにRとTを推定する手法
 
+<div style="text-align: center;">
+    
 $argminE = \sum_{i=1}^{n} || N_{ti}・(P_{ti} - (RP_{si} + T)) ||^2$
 
+</div>
 
 ```py
 o3d.registration.registration_ransac_based_on_feature_matching(source_down, target_down,
